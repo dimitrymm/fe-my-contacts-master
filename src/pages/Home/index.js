@@ -14,7 +14,7 @@ export default function Home() {
     return (
         <Container>
             <InputSearchContainer>
-                <input type="text" placeholder="Pesquisar Contatos..." />
+                <input type="text" placeholder="Pesquisar Contatos.." />
             </InputSearchContainer>
             <Header>
                 <strong>3 Contatos</strong>
