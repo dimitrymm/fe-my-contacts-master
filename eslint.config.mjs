@@ -1,20 +1,23 @@
-import globals from "globals";
 import pluginJs from "@eslint/js";
-import pluginReact, { rules } from "eslint-plugin-react";
-import plugin from "eslint-plugin-react";
+import eslintConfigPrettier from "eslint-config-prettier";
+import pluginReact from "eslint-plugin-react";
+import globals from "globals";
+const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 
+module.exports = [eslintPluginPrettierRecommended];
 export default [
     {
         files: ["**/*.{js,mjs,cjs,jsx}"],
         rules: {
-            "react-hooks/rules-of-hooks": "error",
+                "react-hooks/rules-of-hooks": "error",
             "react-hooks/exhaustive-deps": "warn",
+            "prettier/prettier": "error",
         },
         extends: {
             plugin: react / jsx - runtime,
             plugin: react - hooks / recommended,
         },
-        plugins: ["react-hooks"],
+        plugins: ["react-hooks", "prettier"],
     },
     {
         languageOptions: {
@@ -24,4 +27,5 @@ export default [
 
     pluginJs.configs.recommended,
     pluginReact.configs.flat.recommended,
+    eslintConfigPrettier,
 ];

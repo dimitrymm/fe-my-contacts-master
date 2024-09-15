@@ -1,6 +1,6 @@
-import { Overlay } from "./styles";
-import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
+import { Overlay } from "./styles";
 
 export default function Loader({ isLoading }) {
     if (!isLoading) {
