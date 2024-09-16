@@ -1,7 +1,7 @@
-import arrow from "../../assets/images/icons/arrow.svg";
-import edit from "../../assets/images/icons/edit.svg";
-import trash from "../../assets/images/icons/trash.svg";
-import sad from "../../assets/images/sad.svg";
+import arrow from '../../assets/images/icons/arrow.svg';
+import edit from '../../assets/images/icons/edit.svg';
+import trash from '../../assets/images/icons/trash.svg';
+import sad from '../../assets/images/sad.svg';
 import {
     Card,
     Container,
@@ -9,18 +9,18 @@ import {
     Header,
     InputSearchContainer,
     ListHeader,
-} from "./styles";
+} from './styles';
 
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import Button from "../../components/Button";
-import Loader from "../../components/Loader";
-import ContactsService from "../../services/ContactsService";
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import Button from '../../components/Button';
+import Loader from '../../components/Loader';
+import ContactsService from '../../services/ContactsService';
 
 export default function Home() {
     const [contacts, setContacts] = useState([]);
-    const [orderBy, setOrderBy] = useState("asc");
-    const [searchTerm, setSearchTerm] = useState("");
+    const [orderBy, setOrderBy] = useState('asc');
+    const [searchTerm, setSearchTerm] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
@@ -44,7 +44,7 @@ export default function Home() {
         } catch {
             setHasError(true);
         } finally {
-                    setIsLoading(false);
+            setIsLoading(false);
         }
     }, [orderBy]);
 
@@ -53,7 +53,7 @@ export default function Home() {
     }, [loadContacts]);
 
     function handleToggleOrderBy() {
-        setOrderBy((prevState) => (prevState === "asc" ? "desc" : "asc"));
+        setOrderBy((prevState) => (prevState === 'asc' ? 'desc' : 'asc'));
     }
 
     function handleChangeSearchTerm(event) {
@@ -78,8 +78,8 @@ export default function Home() {
                     <strong>
                         {filteredContacts.length}
                         {filteredContacts.length === 1
-                            ? " Contato"
-                            : " Contatos"}
+                            ? ' Contato'
+                            : ' Contatos'}
                     </strong>
                 )}
 

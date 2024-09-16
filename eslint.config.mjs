@@ -1,23 +1,22 @@
-import pluginJs from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
-import pluginReact from "eslint-plugin-react";
-import globals from "globals";
-const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
+import { default as js, default as pluginJs } from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import pluginReact from 'eslint-plugin-react';
+import globals from 'globals';
+const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
 
-module.exports = [eslintPluginPrettierRecommended];
 export default [
+    js.configs.recommended,
     {
-        files: ["**/*.{js,mjs,cjs,jsx}"],
         rules: {
-                "react-hooks/rules-of-hooks": "error",
-            "react-hooks/exhaustive-deps": "warn",
-            "prettier/prettier": "error",
+            'react/react-in-jsx-scope': '1',
+            'no-unused-vars': 'error',
+            'no-undef': 'error',
+            semi: 'error',
+            'prefer-const': 'error',
         },
-        extends: {
-            plugin: react / jsx - runtime,
-            plugin: react - hooks / recommended,
-        },
-        plugins: ["react-hooks", "prettier"],
+    },
+    {
+        files: ['**/*.{js,mjs,cjs,jsx}'],
     },
     {
         languageOptions: {
@@ -28,4 +27,5 @@ export default [
     pluginJs.configs.recommended,
     pluginReact.configs.flat.recommended,
     eslintConfigPrettier,
+    eslintPluginPrettierRecommended,
 ];

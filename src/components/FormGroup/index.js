@@ -1,5 +1,5 @@
-import { Container } from "./styles";
-import PropTypes from "prop-types";
+import { Container } from './styles';
+import PropTypes from 'prop-types';
 
 export default function FormGroup({ children, error }) {
     return (
